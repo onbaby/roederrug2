@@ -1,0 +1,125 @@
+"use client"
+
+import { Button } from "@/components/ui/button"
+import { Award, Heart, Truck, Users } from "lucide-react"
+import { useEffect, useState } from "react"
+import Aurora from "./Aurora"
+
+export function HeroSection() {
+  const [isVisible, setIsVisible] = useState(false)
+
+  useEffect(() => {
+    setIsVisible(true)
+  }, [])
+
+  return (
+    <section className="relative">
+      {/* Hero Background */}
+      <div className="relative h-[600px] lg:h-[700px] overflow-hidden bg-black">
+        <div className="absolute inset-0">
+          <Aurora
+            colorStops={["#3A29FF", "#FF94B4", "#FF3232"]}
+            blend={0.5}
+            amplitude={1.0}
+            speed={0.5}
+          />
+          <div className="absolute inset-0 bg-black/40" />
+        </div>
+
+        {/* Hero Content */}
+        <div className="relative container mx-auto px-4 h-full flex items-center">
+          <div className="max-w-2xl text-white">
+            <h1
+              className={`heading-display text-4xl md:text-5xl lg:text-6xl text-white mb-6 text-balance transition-all duration-1000 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
+              Custom Rugs To Express Your Style
+            </h1>
+            <p
+              className={`text-lg md:text-xl mb-8 text-white/90 leading-relaxed transition-all duration-1000 delay-300 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
+              Custom handmade rugs based on your design
+            </p>
+
+            <div
+              className={`flex flex-col sm:flex-row gap-4 transition-all duration-1000 delay-500 ${
+                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
+              }`}
+            >
+              <Button
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 transform hover:scale-105 transition-all duration-300 hover:shadow-lg"
+              >
+                Start Here
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-white text-white hover:bg-white hover:text-foreground px-8 py-3 bg-transparent transform hover:scale-105 transition-all duration-300 hover:shadow-lg"
+              >
+                Contact Us
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Feature Grid */}
+      <div className="bg-background py-16">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: Award,
+                title: "Quality You Can Feel",
+                description: "Premium durable craftsmanship",
+                delay: "delay-100",
+              },
+              {
+                icon: Heart,
+                title: "One-of-a Kind Rugs",
+                description: "Your ideas into unique handmade tufted rugs",
+                delay: "delay-200",
+              },
+              {
+                icon: Users,
+                title: "Personalised Process",
+                description: "Collaboration from design to delivery",
+                delay: "delay-300",
+              },
+              {
+                icon: Truck,
+                title: "250+ Rugs Made",
+                description: "Trusted for quality and customer service",
+                delay: "delay-400",
+              },
+            ].map((feature, index) => {
+              const IconComponent = feature.icon
+              return (
+                <div
+                  key={index}
+                  className={`p-6 text-center group cursor-pointer transition-all duration-700 ${feature.delay} ${
+                    isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
+                  } hover:transform hover:scale-105`}
+                >
+                  <div className="flex justify-center mb-4">
+                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-all duration-300 group-hover:rotate-12">
+                      <IconComponent className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />
+                    </div>
+                  </div>
+                  <h3 className="heading-serif text-lg mb-2 font-semibold group-hover:text-primary transition-colors duration-300">
+                    {feature.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
