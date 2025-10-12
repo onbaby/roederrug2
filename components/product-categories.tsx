@@ -28,8 +28,7 @@ export function ProductCategories() {
     {
       title: "Custom Designed Rugs",
       description: "Your design on a handmade tufted rug, complete customisation over colours, borders, designs.",
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-09-26%20at%204.07.07%E2%80%AFPM-6NI32.jpeg",
+      image: "/custom.jpeg",
       cta: "Start Your Rug",
       href: "/custom-designed",
     },
@@ -37,7 +36,7 @@ export function ProductCategories() {
       title: "Business Logo Rugs",
       description:
         "Level up your brand with a customised tufted rug using your logo, slogan or other image that represents your business.",
-      image: "/business-logo-rug-with-company-branding.jpg",
+      image: "/business.jpeg",
       cta: "Business Rugs",
       href: "/business-logo",
     },
@@ -45,21 +44,21 @@ export function ProductCategories() {
       title: "Keyboard Rugs",
       description:
         "These rugs serve as unique decor pieces, adding personality to offices, gaming rooms, or tech-inspired spaces.",
-      image: "/custom-keyboard-design-rug-for-gaming-setup.jpg",
+      image: "/keyboard.webp",
       cta: "Custom Request",
       href: "/keyboard-rugs",
     },
     {
       title: "Custom Sports Logo Rugs",
       description: "Turn your favourite teams logo into a tufted rug, perfect for any man cave or sports lover.",
-      image: "/sports-team-logo-rug-with-team-colors.jpg",
+      image: "/sports.jpg",
       cta: "Start Your Rug",
       href: "/sports-logo",
     },
     {
       title: "Custom Car Mats",
       description: "Custom sized and fitted for any car, van or truck.",
-      image: "/custom-car-floor-mats-with-personalized-design.jpg",
+      image: "/carrug.jpg",
       cta: "Submit Request",
       href: "/car-mats",
     },
@@ -96,7 +95,11 @@ export function ProductCategories() {
                 <img
                   src={category.image || "/placeholder.svg"}
                   alt={category.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className={`w-full h-full object-cover transition-transform duration-700 ${
+                    category.title === "Custom Designed Rugs" 
+                      ? "group-hover:scale-140" 
+                      : "group-hover:scale-110"
+                  }`}
                 />
               </div>
 
@@ -143,7 +146,11 @@ export function ProductCategories() {
                   <img
                     src={category.image || "/placeholder.svg"}
                     alt={category.title}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className={`w-full h-full object-cover transition-transform duration-700 ${
+                      category.title === "Custom Designed Rugs" 
+                        ? "group-hover:scale-140" 
+                        : "group-hover:scale-110"
+                    }`}
                   />
                 </div>
 

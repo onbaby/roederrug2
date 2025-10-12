@@ -41,7 +41,7 @@ export function HeroSection() {
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              Custom handmade rugs based on your design
+             
             </p>
 
             <div
@@ -106,14 +106,13 @@ export function HeroSection() {
                   } hover:transform hover:scale-105`}
                 >
                   <div className="flex justify-center mb-4">
-                    <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-all duration-300 group-hover:rotate-12">
+                    <div className="w-16 h-16 flex items-center justify-center transition-all duration-300 group-hover:rotate-12">
                       <IconComponent className="h-8 w-8 text-primary group-hover:scale-110 transition-transform duration-300" />
                     </div>
                   </div>
-                  <h3 className="heading-serif text-lg mb-2 font-semibold group-hover:text-primary transition-colors duration-300">
+                  <h3 className="heading-serif text-lg font-semibold group-hover:text-primary transition-colors duration-300">
                     {feature.title}
                   </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{feature.description}</p>
                 </div>
               )
             })}

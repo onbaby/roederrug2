@@ -30,33 +30,33 @@ export function TestimonialsAbout() {
   const testimonials = [
     {
       quote:
-        "The quality exceeded my expectations! My custom logo rug looks absolutely stunning in our office lobby. The attention to detail is remarkable.",
-      author: "Sarah Mitchell",
-      handle: "@sarahmdesign",
+        "if you in the A, and need a rug, go to Roeder fs.",
+      author: "Sadiq R.",
+      handle: "@sadiqrasheed25",
       image: "/placeholder.svg?key=test1",
       rating: 5,
     },
     {
       quote:
-        "From design to delivery, the entire process was seamless. The team was incredibly helpful and the final product is exactly what I envisioned.",
-      author: "Michael Chen",
-      handle: "@mikechenart",
+        "Roeder is the best rugger",
+      author: "Owen B.",
+      handle: "@owen.bailey906",
       image: "/placeholder.svg?key=test2",
       rating: 5,
     },
     {
       quote:
-        "I've ordered three custom rugs now and each one has been perfect. The craftsmanship is outstanding and they really bring my spaces to life.",
-      author: "Emma Rodriguez",
-      handle: "@emmainteriors",
+        "I ordered a goomba rug. It's so good. I love it.",
+      author: "Raul R.",
+      handle: "@raul.ram11",
       image: "/placeholder.svg?key=test3",
       rating: 5,
     },
     {
       quote:
-        "The keyboard rug for my gaming setup is incredible! It's become a conversation starter and the quality is top-notch. Highly recommend!",
-      author: "Alex Thompson",
-      handle: "@alexgaming",
+        "gets you right",
+      author: "David N.",
+      handle: "@d_nealz3",
       image: "/placeholder.svg?key=test4",
       rating: 5,
     },
@@ -98,7 +98,7 @@ export function TestimonialsAbout() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            Join 250+ Happy Customers
+            Join 50+ Happy Customers
           </h2>
           <p
             className={`text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed mb-12 transition-all duration-1000 delay-200 ${
@@ -111,7 +111,7 @@ export function TestimonialsAbout() {
           {/* Testimonial Carousel */}
           <div className="max-w-4xl mx-auto">
             <Card
-              className={`p-8 md:p-12 relative hover:shadow-xl transition-all duration-500 ${
+              className={`p-8 md:p-12 pt-12 md:pt-16 relative hover:shadow-xl transition-all duration-500 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
               }`}
             >
@@ -124,7 +124,7 @@ export function TestimonialsAbout() {
               </div>
 
               <div className="text-center">
-                <div className="flex justify-center mb-4">
+                <div className="flex justify-center mb-4  pb-5">
                   {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
                     <Star
                       key={i}
@@ -148,18 +148,11 @@ export function TestimonialsAbout() {
                 </blockquote>
 
                 <div
-                  className={`flex items-center justify-center gap-4 transition-all duration-500 delay-100 ${
+                  className={`flex items-center justify-center transition-all duration-500 delay-100 ${
                     isTransitioning ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
                   }`}
                 >
-                  <img
-                    src={testimonials[currentTestimonial].image || "/placeholder.svg"}
-                    alt={testimonials[currentTestimonial].author}
-                    className={`w-12 h-12 rounded-full object-cover transition-all duration-500 hover:scale-110 ${
-                      isTransitioning ? "scale-75 opacity-50" : "scale-100 opacity-100"
-                    }`}
-                  />
-                  <div className="text-left">
+                  <div className="text-center">
                     <div className="font-medium">{testimonials[currentTestimonial].author}</div>
                     <div className="text-muted-foreground text-sm">{testimonials[currentTestimonial].handle}</div>
                   </div>

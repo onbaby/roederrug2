@@ -103,28 +103,28 @@ export function HowItWorks() {
           <div className="hidden md:block text-center mb-12">
             <div className="flex justify-center mb-6">
               <div
-                className={`w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center transition-all duration-500 ${
-                  isTransitioning ? "scale-75 opacity-50" : "scale-100 opacity-100"
-                } hover:scale-110 hover:bg-primary/20`}
+                className={`w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center transition-all duration-700 ${
+                  isTransitioning ? "scale-75 opacity-50 rotate-180" : "scale-100 opacity-100 rotate-0"
+                } hover:scale-110 hover:bg-primary/20 hover:rotate-12`}
               >
                 <CurrentIcon
-                  className={`h-10 w-10 text-primary transition-all duration-500 ${
-                    isTransitioning ? "rotate-180" : "rotate-0"
+                  className={`h-10 w-10 text-primary transition-all duration-700 ${
+                    isTransitioning ? "rotate-180 scale-75" : "rotate-0 scale-100"
                   }`}
                 />
               </div>
             </div>
 
             <h3
-              className={`heading-display text-2xl md:text-3xl lg:text-4xl font-bold mb-6 transition-all duration-500 ${
-                isTransitioning ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
+              className={`heading-display text-2xl md:text-3xl lg:text-4xl font-bold mb-6 transition-all duration-700 ${
+                isTransitioning ? "opacity-0 translate-y-8 scale-95" : "opacity-100 translate-y-0 scale-100"
               }`}
             >
               {steps[currentStep].title}
             </h3>
             <p
-              className={`text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-relaxed transition-all duration-500 delay-100 ${
-                isTransitioning ? "opacity-0 translate-y-4" : "opacity-100 translate-y-0"
+              className={`text-muted-foreground text-lg md:text-xl max-w-2xl mx-auto leading-relaxed transition-all duration-700 delay-150 ${
+                isTransitioning ? "opacity-0 translate-y-8 scale-95" : "opacity-100 translate-y-0 scale-100"
               }`}
             >
               {steps[currentStep].description}
@@ -149,32 +149,41 @@ export function HowItWorks() {
 
           {/* Mobile 2x2 Grid Display */}
           <div className="md:hidden mb-12">
-            <div className="grid grid-cols-2 gap-6 max-w-sm mx-auto">
+            <div className="grid grid-cols-2 gap-6 max-w-sm mx-auto" style={{ gridTemplateAreas: '"item1 item2" "item3 item4" "item5 item5"' }}>
               {steps.map((step, index) => {
                 const StepIcon = step.icon
                 const isActive = index === currentStep
+                const gridArea = `item${index + 1}`
                 return (
                   <div
                     key={index}
-                    className={`text-center p-4 rounded-lg transition-all duration-300 cursor-pointer ${
-                      isActive ? "bg-primary/10 scale-105" : "bg-muted/50 hover:bg-muted"
+                    className={`text-center p-4 rounded-lg transition-all duration-500 cursor-pointer transform ${
+                      isActive 
+                        ? "bg-primary/10 scale-105 shadow-lg" 
+                        : "bg-muted/50 hover:bg-muted hover:scale-102"
                     }`}
+                    style={{ 
+                      gridArea,
+                      transitionDelay: `${index * 50}ms`
+                    }}
                     onClick={() => goToStep(index)}
                   >
                     <div className="flex justify-center mb-3">
                       <div
-                        className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-300 ${
-                          isActive ? "bg-primary/20" : "bg-background"
+                        className={`w-12 h-12 rounded-full flex items-center justify-center transition-all duration-500 ${
+                          isActive ? "bg-primary/20 scale-110 rotate-12" : "bg-background"
                         }`}
                       >
                         <StepIcon
-                          className={`h-6 w-6 transition-all duration-300 ${
-                            isActive ? "text-primary" : "text-muted-foreground"
+                          className={`h-6 w-6 transition-all duration-500 ${
+                            isActive ? "text-primary scale-110" : "text-muted-foreground"
                           }`}
                         />
                       </div>
                     </div>
-                    <h4 className={`text-sm font-medium leading-tight ${isActive ? "text-foreground" : "text-muted-foreground"}`}>
+                    <h4 className={`text-sm font-medium leading-tight transition-all duration-500 ${
+                      isActive ? "text-foreground scale-105" : "text-muted-foreground"
+                    }`}>
                       {step.title}
                     </h4>
                   </div>
@@ -206,7 +215,7 @@ export function HowItWorks() {
           </div>
 
           {/* Navigation */}
-          <div className="flex items-center justify-center gap-8 mb-8">
+          <div className="hidden md:flex items-center justify-center gap-8 mb-8">
             <Button
               variant="ghost"
               size="icon"
@@ -237,7 +246,7 @@ export function HowItWorks() {
           </div>
 
           {/* Step Dots */}
-          <div className="flex justify-center gap-2">
+          <div className="hidden md:flex justify-center gap-2">
             {steps.map((_, index) => (
               <button
                 key={index}
@@ -255,7 +264,7 @@ export function HowItWorks() {
           </div>
 
           {/* Progress Bar */}
-          <div className="mt-8 max-w-md mx-auto">
+          <div className="hidden md:block mt-8 max-w-md mx-auto">
             <div className="w-full bg-border rounded-full h-1">
               <div
                 className="bg-primary h-1 rounded-full transition-all duration-500 ease-out"
