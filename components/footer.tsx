@@ -6,7 +6,7 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
-import { MessageCircle, Facebook, Instagram, CreditCard, Truck, Shield, RotateCcw, X } from "lucide-react"
+import { MessageCircle, Instagram, CreditCard, Truck, Shield, RotateCcw, X } from "lucide-react"
 
 export function Footer() {
   const [email, setEmail] = useState("")
@@ -115,13 +115,9 @@ export function Footer() {
                 </p>
                 <div className="flex gap-4">
                   <a
-                    href="#"
-                    className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-125 hover:rotate-12"
-                  >
-                    <Facebook className="h-5 w-5" />
-                  </a>
-                  <a
-                    href="#"
+                    href="https://www.instagram.com/roeders.rugs/?hl=en"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-125 hover:-rotate-12"
                   >
                     <Instagram className="h-5 w-5" />
