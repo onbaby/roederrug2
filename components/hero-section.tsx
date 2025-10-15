@@ -37,7 +37,7 @@ export function HeroSection() {
 
         {/* Hero Content */}
         <div className="relative container mx-auto px-4 h-full flex items-center">
-          <div className="max-w-2xl text-white">
+          <div className="max-w-2xl text-white text-center mx-auto">
             <h1
               className={`heading-display text-4xl md:text-5xl lg:text-6xl text-white mb-6 text-balance transition-all duration-1000 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
@@ -54,20 +54,20 @@ export function HeroSection() {
             </p>
 
             <div
-              className={`flex flex-col sm:flex-row gap-4 transition-all duration-1000 delay-500 ${
+              className={`flex flex-col sm:flex-row gap-4 items-center sm:items-start transition-all duration-1000 delay-500 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
               <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 transform hover:scale-105 transition-all duration-300 hover:shadow-lg"
+                size="sm"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-2 py-1 md:px-8 md:py-3 text-xs md:text-base transform hover:scale-105 transition-all duration-300 hover:shadow-lg w-80 md:w-auto"
               >
                 Start Here
               </Button>
               <Button
-                size="lg"
+                size="sm"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-foreground px-8 py-3 bg-transparent transform hover:scale-105 transition-all duration-300 hover:shadow-lg"
+                className="border-white text-white hover:bg-white hover:text-foreground px-2 py-1 md:px-8 md:py-3 text-xs md:text-base bg-transparent transform hover:scale-105 transition-all duration-300 hover:shadow-lg w-80 md:w-auto"
               >
                 Contact Us
               </Button>

@@ -91,11 +91,11 @@ export function HowItWorks() {
           {/* Title */}
           <div className="text-center mb-16">
             <h2
-              className={`heading-display text-4xl md:text-5xl mb-8 transition-all duration-1000 lg:text-5xl font-light ${
+              className={`heading-display text-4xl md:text-5xl mb-8 transition-all duration-1000 lg:text-5xl font-semibold ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              How It Works
+              How It Works:
             </h2>
           </div>
 

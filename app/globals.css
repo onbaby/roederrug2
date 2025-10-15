@@ -76,10 +76,11 @@
 }
 
 @theme inline {
-  /* Added elegant serif font for headings and kept sans for body */
+  /* Added elegant serif font for headings and Instrument Sans for body */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-instrument: "Instrument Sans Semi Condensed", ui-sans-serif, system-ui, sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -125,15 +126,19 @@
   body {
     @apply bg-background text-foreground;
   }
+  /* Custom font classes */
+  .font-instrument {
+    font-family: var(--font-instrument);
+  }
   /* Added custom typography classes for elegant headings */
   .heading-serif {
-    font-family: var(--font-serif);
-    font-weight: 400;
+    font-family: var(--font-instrument);
+    font-weight: 600;
     letter-spacing: -0.02em;
   }
   .heading-display {
-    font-family: var(--font-serif);
-    font-weight: 300;
+    font-family: var(--font-instrument);
+    font-weight: 700;
     letter-spacing: -0.03em;
     line-height: 1.1;
   }
