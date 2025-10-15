@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Star, Quote } from "lucide-react"
-import Masonry from './Masonry'
 
 export function TestimonialsAbout() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
@@ -194,43 +193,8 @@ export function TestimonialsAbout() {
           </div>
         </div>
 
-        {/* About the Artist Section */}
+        {/* Customer Gallery */}
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div
-              className={`transition-all duration-1000 delay-300 ${
-                isVisible ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-8"
-              }`}
-            >
-              <img
-                src="/placeholder.svg?key=artist"
-                alt="Master craftsperson at work"
-                className="w-full rounded-lg shadow-sm hover:shadow-xl hover:scale-105 transition-all duration-500"
-              />
-            </div>
-            <div
-              className={`transition-all duration-1000 delay-400 ${
-                isVisible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
-              }`}
-            >
-              <h3 className="heading-display text-2xl md:text-3xl mb-6 hover:text-primary transition-colors duration-300">
-                About the Artist
-              </h3>
-              <div className="space-y-6 text-muted-foreground leading-relaxed">
-                <div>
-                  <p>Master craftsperson with over 15 years of experience in traditional rug making techniques.</p>
-                </div>
-                <div>
-                  <p>
-                    Each rug is hand-tufted with precision and care, ensuring every piece meets our highest quality
-                    standards.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Customer Gallery */}
           <div className="text-center mb-8">
             <h3
               className={`heading-display text-2xl md:text-3xl mb-4 transition-all duration-1000 delay-500 ${
@@ -248,79 +212,90 @@ export function TestimonialsAbout() {
             </p>
           </div>
 
-          <div className="h-[600px] md:h-[600px] mobile-masonry">
-            <Masonry
-              items={[
-                {
-                  id: "1",
-                  img: "https://picsum.photos/id/1015/600/900?grayscale",
-                  url: "https://example.com/one",
-                  height: 400,
-                },
-                {
-                  id: "2",
-                  img: "https://picsum.photos/id/1011/600/750?grayscale",
-                  url: "https://example.com/two",
-                  height: 250,
-                },
-                {
-                  id: "3",
-                  img: "https://picsum.photos/id/1020/600/800?grayscale",
-                  url: "https://example.com/three",
-                  height: 600,
-                },
-                {
-                  id: "4",
-                  img: "https://picsum.photos/id/1025/600/650?grayscale",
-                  url: "https://example.com/four",
-                  height: 350,
-                },
-                {
-                  id: "5",
-                  img: "https://picsum.photos/id/1031/600/700?grayscale",
-                  url: "https://example.com/five",
-                  height: 450,
-                },
-                {
-                  id: "6",
-                  img: "https://picsum.photos/id/1035/600/550?grayscale",
-                  url: "https://example.com/six",
-                  height: 300,
-                },
-                {
-                  id: "7",
-                  img: "https://picsum.photos/id/1040/600/800?grayscale",
-                  url: "https://example.com/seven",
-                  height: 500,
-                },
-                {
-                  id: "8",
-                  img: "https://picsum.photos/id/1045/600/600?grayscale",
-                  url: "https://example.com/eight",
-                  height: 400,
-                },
-                {
-                  id: "9",
-                  img: "https://picsum.photos/id/1050/600/750?grayscale",
-                  url: "https://example.com/nine",
-                  height: 350,
-                },
-                {
-                  id: "10",
-                  img: "https://picsum.photos/id/1055/600/650?grayscale",
-                  url: "https://example.com/ten",
-                  height: 450,
-                },
-              ]}
-              ease="power3.out"
-              duration={0.6}
-              stagger={0.05}
-              animateFrom="bottom"
-              scaleOnHover={true}
-              hoverScale={0.95}
-              blurToFocus={true}
-              colorShiftOnHover={false}
-            />
+          {/* Custom Collage */}
+          <div className="relative w-full h-[500px] md:h-[350px] lg:h-[400px] overflow-hidden rounded-2xl">
+            {/* Mobile/Tablet: 2x2 Grid */}
+            <div className="absolute inset-0 grid grid-cols-2 gap-4 md:gap-4 h-full lg:hidden">
+              {/* Left Column */}
+              <div className="flex flex-col gap-4 md:gap-4">
+                <div className="relative flex-1 group overflow-hidden rounded-xl md:rounded-2xl">
+                  <img
+                    src="/IMG_1089.jpeg"
+                    alt="Custom Domo-kun Rug"
+                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 md:group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
+                </div>
+                <div className="relative h-40 md:h-32 group overflow-hidden rounded-xl md:rounded-2xl">
+                  <img
+                    src="/IMG_1094.jpeg"
+                    alt="Custom Butterfly Rug"
+                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 md:group-hover:scale-110"
+                    style={{ objectPosition: 'center 20%' }}
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
+                </div>
+              </div>
+              
+              {/* Right Column */}
+              <div className="flex flex-col gap-4 md:gap-4">
+                <div className="relative h-40 md:h-32 group overflow-hidden rounded-xl md:rounded-2xl">
+                  <img
+                    src="/IMG_1439.jpg"
+                    alt="Custom Mushroom Rug"
+                    className="w-full h-full object-cover object-top md:object-center transition-all duration-500 group-hover:scale-105 md:group-hover:scale-110"
+                    style={{ transform: 'translateY(-30px) scale(1.35)' }}
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
+                </div>
+                <div className="relative flex-1 group overflow-hidden rounded-xl md:rounded-2xl">
+                  <img
+                    src="/IMG_1249.jpeg"
+                    alt="Custom Rose Rug"
+                    className="w-full h-full object-cover transition-all duration-500 group-hover:scale-105 md:group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
+                </div>
+              </div>
+            </div>
+
+            {/* Desktop: Single Row */}
+            <div className="absolute inset-0 hidden lg:flex gap-6 h-full">
+              <div className="relative flex-1 group overflow-hidden rounded-2xl">
+                <img
+                  src="/IMG_1089.jpeg"
+                  alt="Custom Domo-kun Rug"
+                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
+              </div>
+              <div className="relative flex-1 group overflow-hidden rounded-2xl">
+                <img
+                  src="/IMG_1094.jpeg"
+                  alt="Custom Butterfly Rug"
+                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
+                  style={{ objectPosition: 'center 20%' }}
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
+              </div>
+              <div className="relative flex-1 group overflow-hidden rounded-2xl">
+                <img
+                  src="/IMG_1439.jpg"
+                  alt="Custom Mushroom Rug"
+                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
+                  style={{ transform: 'translateY(-20px) scale(1.35)' }}
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
+              </div>
+              <div className="relative flex-1 group overflow-hidden rounded-2xl">
+                <img
+                  src="/IMG_1249.jpeg"
+                  alt="Custom Rose Rug"
+                  className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-all duration-300" />
+              </div>
+            </div>
           </div>
         </div>
       </div>

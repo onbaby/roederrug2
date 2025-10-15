@@ -40,21 +40,18 @@ export function Header() {
         }`}
       >
         <div className="container mx-auto px-4">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <div className="flex items-center">
-              <a
-                href="/"
-                className={`heading-serif text-2xl font-medium text-foreground transition-all duration-300 hover:scale-105 ${
-                  isScrolled ? "text-primary" : ""
-                }`}
-              >
-                Roeder's Rugs
-              </a>
+          <div className="flex items-center justify-center h-16 relative">
+            {/* Center Logo */}
+            <div className="flex items-center justify-center">
+              <img
+                src="/548509575_17890761447341544_4458477934078795091_n.png"
+                alt="Roeder's Rugs"
+                className="h-14 w-14 md:h-12 md:w-12 object-contain transition-all duration-300 hover:scale-110"
+              />
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-5">
+            <nav className="hidden lg:flex items-center space-x-5 absolute right-4">
               <a
                 href="/"
                 className="text-foreground hover:text-primary transition-all duration-300 hover:scale-105 relative group"
@@ -117,13 +114,23 @@ export function Header() {
               </DropdownMenu>
             </nav>
 
-            {/* Right side icons */}
-            
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="lg:hidden p-2 text-foreground hover:text-primary transition-all duration-300 absolute left-4"
+            >
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
+            </button>
           </div>
 
           {/* Mobile Navigation */}
-          {isMenuOpen && (
-            <div className="lg:hidden border-t py-4 animate-in slide-in-from-top-2 duration-300">
+          <div className={`lg:hidden border-t overflow-hidden transition-all duration-500 ease-in-out ${
+            isMenuOpen ? 'max-h-96 opacity-100 py-4' : 'max-h-0 opacity-0 py-0'
+          }`}>
               <nav className="flex flex-col space-y-4">
                 {[
                   { href: "/", label: "Home" },
@@ -136,15 +143,20 @@ export function Header() {
                   <a
                     key={item.href}
                     href={item.href}
-                    className="text-foreground hover:text-primary transition-all duration-300 hover:translate-x-2"
-                    style={{ animationDelay: `${index * 50}ms` }}
+                    className={`text-foreground hover:text-primary transition-all duration-500 ease-in-out hover:translate-x-2 transform ${
+                      isMenuOpen 
+                        ? 'translate-y-0 opacity-100' 
+                        : 'translate-y-4 opacity-0'
+                    }`}
+                    style={{ 
+                      transitionDelay: isMenuOpen ? `${index * 100}ms` : '0ms'
+                    }}
                   >
                     {item.label}
                   </a>
                 ))}
               </nav>
-            </div>
-          )}
+          </div>
         </div>
       </div>
     </header>

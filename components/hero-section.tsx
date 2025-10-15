@@ -26,6 +26,15 @@ export function HeroSection() {
           <div className="absolute inset-0 bg-black/40" />
         </div>
 
+        {/* Hero Image */}
+        <div className="absolute inset-0 flex items-center justify-center">
+          <img
+            src="/AdobeStock_1516222218.jpeg"
+            alt="Custom Rug Creation"
+            className="w-full h-full object-cover opacity-60"
+          />
+        </div>
+
         {/* Hero Content */}
         <div className="relative container mx-auto px-4 h-full flex items-center">
           <div className="max-w-2xl text-white">
@@ -70,7 +79,7 @@ export function HeroSection() {
       {/* Feature Grid */}
       <div className="bg-background py-16">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 icon: Award,
