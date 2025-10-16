@@ -129,11 +129,11 @@ export function ProductCategories() {
 
         {/* Mobile Horizontal Scroll */}
         <div className="md:hidden">
-          <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
+          <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory">
             {categories.map((category, index) => (
               <Card
                 key={index}
-                className={`group overflow-hidden border-0 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col transform hover:-translate-y-2 flex-shrink-0 w-64 ${
+                className={`group overflow-hidden border-0 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col transform hover:-translate-y-2 flex-shrink-0 w-[calc(100vw-2rem)] snap-center ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
                 }`}
                 style={{
@@ -141,7 +141,7 @@ export function ProductCategories() {
                   animationDelay: `${index * 100}ms`,
                 }}
               >
-                <div className="aspect-[4/3] overflow-hidden relative">
+                <div className="aspect-square overflow-hidden relative">
                   <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-all duration-500 z-10" />
                   <img
                     src={category.image || "/placeholder.svg"}
@@ -154,23 +154,23 @@ export function ProductCategories() {
                   />
                 </div>
 
-                <div className="p-4 flex flex-col flex-1">
-                  <h3 className="heading-serif text-lg font-medium mb-2 text-balance group-hover:text-primary transition-colors duration-300">
+                <div className="p-8 flex flex-col flex-1">
+                  <h3 className="heading-serif text-xl font-medium mb-3 text-balance group-hover:text-primary transition-colors duration-300">
                     {category.title}
                   </h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed text-xs flex-1 group-hover:text-foreground transition-colors duration-300">
+                  <p className="text-muted-foreground mb-6 leading-relaxed text-sm flex-1 group-hover:text-foreground transition-colors duration-300">
                     {category.description}
                   </p>
 
                   <Button
                     variant="outline"
-                    size="sm"
+                    size="default"
                     className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 bg-transparent mt-auto transform group-hover:scale-105 group-hover:shadow-lg"
                     asChild
                   >
-                    <a href={category.href} className="flex items-center justify-center gap-1">
+                    <a href={category.href} className="flex items-center justify-center gap-2">
                       {category.cta}
-                      <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform duration-300" />
+                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
                     </a>
                   </Button>
                 </div>

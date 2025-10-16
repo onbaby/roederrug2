@@ -77,32 +77,32 @@ export function HeroSection() {
       </div>
 
       {/* Feature Grid */}
-      <div className="bg-background py-16">
+      <div className="bg-background py-12">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               {
                 icon: Award,
                 title: "Quality You Can Feel",
-                description: "Premium durable craftsmanship",
+                description: "Built to last with care and precision in every thread",
                 delay: "delay-100",
               },
               {
                 icon: Heart,
                 title: "One-of-a Kind Rugs",
-                description: "Your ideas into unique handmade tufted rugs",
+                description: "Turn your vision into a statement piece made by hand",
                 delay: "delay-200",
               },
               {
                 icon: Users,
                 title: "Personalised Process",
-                description: "Collaboration from design to delivery",
+                description: "We work side-by-side from first sketch to final stitch",
                 delay: "delay-300",
               },
               {
                 icon: Truck,
-                title: "250+ Rugs Made",
-                description: "Trusted for quality and customer service",
+                title: "50+ Rugs Made",
+                description: "A proven track record of craftsmanship and happy homes",
                 delay: "delay-400",
               },
             ].map((feature, index) => {
@@ -110,7 +110,7 @@ export function HeroSection() {
               return (
                 <div
                   key={index}
-                  className={`p-6 text-center group cursor-pointer transition-all duration-700 ${feature.delay} ${
+                  className={`p-2 text-center group cursor-pointer transition-all duration-700 ${feature.delay} ${
                     isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
                   } hover:transform hover:scale-105`}
                 >
@@ -122,6 +122,9 @@ export function HeroSection() {
                   <h3 className="heading-serif text-lg font-semibold group-hover:text-primary transition-colors duration-300">
                     {feature.title}
                   </h3>
+                  <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
+                    {feature.description}
+                  </p>
                 </div>
               )
             })}
