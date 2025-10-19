@@ -88,12 +88,12 @@ export function TestimonialsAbout() {
   }
 
   return (
-    <section id="testimonials-about" className="py-16 pb-20 md:pb-16 bg-muted/30">
+    <section id="testimonials-about" className="py-16 pb-20 md:pb-16 bg-blue-50">
       <div className="container mx-auto px-4">
         {/* Testimonials Section */}
         <div className="text-center mb-16">
           <h2
-            className={`heading-display text-3xl md:text-4xl lg:text-5xl mb-4 transition-all duration-1000 ${
+            className={`heading-section text-3xl md:text-4xl lg:text-5xl mb-4 transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
@@ -110,7 +110,7 @@ export function TestimonialsAbout() {
           {/* Testimonial Carousel */}
           <div className="max-w-4xl mx-auto">
             <Card
-              className={`p-8 md:p-12 pt-12 md:pt-16 relative hover:shadow-xl transition-all duration-500 ${
+              className={`p-8 md:p-12 pt-12 md:pt-16 relative hover:shadow-xl transition-all duration-500 bg-white ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
               }`}
             >
@@ -197,7 +197,7 @@ export function TestimonialsAbout() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-8">
             <h3
-              className={`heading-display text-2xl md:text-3xl mb-4 transition-all duration-1000 delay-500 ${
+              className={`heading-section text-2xl md:text-3xl mb-4 transition-all duration-1000 delay-500 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >

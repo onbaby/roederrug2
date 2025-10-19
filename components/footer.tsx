@@ -4,14 +4,10 @@ import type React from "react"
 
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import { Card } from "@/components/ui/card"
-import { MessageCircle, Instagram, CreditCard, Truck, Shield, RotateCcw, X } from "lucide-react"
+import { Instagram, Truck, Shield } from "lucide-react"
 
 export function Footer() {
-  const [email, setEmail] = useState("")
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [isChatOpen, setIsChatOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
@@ -30,66 +26,10 @@ export function Footer() {
     return () => observer.disconnect()
   }, [])
 
-  const handleEmailSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    if (email) {
-      setIsSubmitted(true)
-      setEmail("")
-      setTimeout(() => setIsSubmitted(false), 3000)
-    }
-  }
 
   return (
     <>
-      <footer id="footer" className="bg-background border-t">
-        {/* Email Signup Section */}
-        <div className="bg-primary text-primary-foreground py-12 overflow-hidden">
-          <div className="container mx-auto px-4 text-center">
-            <h3
-              className={`heading-display text-2xl md:text-3xl mb-4 transition-all duration-1000 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
-            >
-              10% OFF YOUR FIRST ORDER
-            </h3>
-            <p
-              className={`text-primary-foreground/90 mb-6 max-w-md mx-auto transition-all duration-1000 delay-200 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
-            >
-              Subscribe to our newsletter for exclusive offers, design inspiration, and rug care tips
-            </p>
-
-            <form
-              onSubmit={handleEmailSubmit}
-              className={`max-w-md mx-auto transition-all duration-1000 delay-400 ${
-                isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
-              }`}
-            >
-              <div className="flex gap-2">
-                <Input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="bg-primary-foreground text-foreground border-0 focus:ring-2 focus:ring-primary-foreground/20 transition-all duration-300"
-                  required
-                />
-                <Button
-                  type="submit"
-                  variant="secondary"
-                  disabled={isSubmitted}
-                  className={`transition-all duration-300 hover:scale-105 ${
-                    isSubmitted ? "animate-pulse bg-green-500 text-white" : ""
-                  }`}
-                >
-                  {isSubmitted ? "Subscribed!" : "Subscribe"}
-                </Button>
-              </div>
-            </form>
-          </div>
-        </div>
-
+      <footer id="footer" className="bg-white border-t">
         {/* Main Footer Content */}
         <div className="py-12">
           <div className="container mx-auto px-4">
@@ -195,50 +135,6 @@ export function Footer() {
         </div>
       </footer>
 
-      {/* Floating Chat Widget */}
-      <div className="fixed bottom-6 right-6 z-50">
-        {isChatOpen ? (
-          <Card className="w-80 h-96 shadow-xl animate-in slide-in-from-bottom-4 duration-300">
-            <div className="flex items-center justify-between p-4 border-b">
-              <div className="flex items-center gap-3">
-                <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center animate-pulse">
-                  <MessageCircle className="h-4 w-4 text-primary" />
-                </div>
-                <div>
-                  <h4 className="font-medium text-sm">Chat with us</h4>
-                  <p className="text-xs text-muted-foreground">We're here to help!</p>
-                </div>
-              </div>
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={() => setIsChatOpen(false)}
-                className="h-8 w-8 p-0 hover:scale-110 transition-transform duration-300"
-              >
-                <X className="h-4 w-4" />
-              </Button>
-            </div>
-            <div className="p-4 flex-1 flex items-center justify-center">
-              <p className="text-sm text-muted-foreground text-center animate-in fade-in duration-500 delay-200">
-                Hi! How can I help you with your custom rug project?
-              </p>
-            </div>
-            <div className="p-4 border-t">
-              <Button className="w-full hover:scale-105 transition-transform duration-300" size="sm">
-                Start Conversation
-              </Button>
-            </div>
-          </Card>
-        ) : (
-          <Button
-            onClick={() => setIsChatOpen(true)}
-            className="h-14 w-14 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110"
-            size="sm"
-          >
-            <MessageCircle className="h-6 w-6 hover:rotate-12 transition-transform duration-300" />
-          </Button>
-        )}
-      </div>
     </>
   )
 }

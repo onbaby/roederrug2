@@ -85,17 +85,17 @@ export function HowItWorks() {
   const CurrentIcon = steps[currentStep].icon
 
   return (
-    <section id="how-it-works" className="py-20 bg-background">
+    <section id="how-it-works" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           {/* Title */}
           <div className="text-center mb-16">
             <h2
-              className={`heading-display text-4xl md:text-5xl mb-8 transition-all duration-1000 lg:text-5xl font-semibold ${
+              className={`heading-section text-4xl md:text-5xl mb-8 transition-all duration-1000 lg:text-5xl font-semibold ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
-              How It Works:
+              How It Works
             </h2>
           </div>
 

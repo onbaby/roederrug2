@@ -22,7 +22,7 @@ export function Header() {
     <header className="w-full">
       {/* Main navigation */}
       <div
-        className={`bg-background border-b transition-all duration-500 ${
+        className={`bg-white border-b transition-all duration-500 ${
           isScrolled ? "shadow-lg backdrop-blur-sm bg-background/95" : ""
         }`}
       >

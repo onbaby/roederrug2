@@ -65,11 +65,11 @@ export function ProductCategories() {
   ]
 
   return (
-    <section id="product-categories" className="py-16 bg-muted/30">
+    <section id="product-categories" className="py-16 bg-blue-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
+        <div className="text-left mb-12">
           <h2
-            className={`heading-display text-3xl md:text-4xl lg:text-5xl mb-4 transition-all duration-1000 ${
+            className={`heading-section text-4xl md:text-5xl lg:text-5xl mb-4 transition-all duration-1000 ${
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
@@ -82,7 +82,7 @@ export function ProductCategories() {
           {categories.map((category, index) => (
             <Card
               key={index}
-              className={`group overflow-hidden border-0 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col transform hover:-translate-y-2 hover:rotate-1 ${
+              className={`group overflow-hidden border-0 shadow-sm bg-gray-500/10 transition-all duration-500 flex flex-col transform hover:-translate-y-2 hover:rotate-1 p-0 rounded-none ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
               }`}
               style={{
@@ -91,7 +91,7 @@ export function ProductCategories() {
               }}
             >
               <div className="aspect-[4/3] overflow-hidden relative">
-                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-all duration-500 z-10" />
+                <div className="absolute inset-0 bg-primary/0 z-10" />
                 <img
                   src={category.image || "/placeholder.svg"}
                   alt={category.title}
@@ -103,23 +103,23 @@ export function ProductCategories() {
                 />
               </div>
 
-              <div className="p-4 flex flex-col flex-1">
-                <h3 className="heading-serif text-lg font-medium mb-2 text-balance group-hover:text-primary transition-colors duration-300">
+              <div className="p-4 flex flex-col flex-1 text-center">
+                <h3 className="heading-serif text-xl font-bold mb-2 text-balance">
                   {category.title}
                 </h3>
-                <p className="text-muted-foreground mb-4 leading-relaxed text-xs flex-1 group-hover:text-foreground transition-colors duration-300">
+                <p className="text-gray-800 mb-4 leading-relaxed text-sm flex-1 text-center">
                   {category.description}
                 </p>
 
                 <Button
-                  variant="outline"
+                  variant="ghost"
                   size="sm"
-                  className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 bg-transparent mt-auto transform group-hover:scale-105 group-hover:shadow-lg"
+                  className="w-full bg-transparent mt-auto border-0 hover:text-foreground"
                   asChild
                 >
                   <a href={category.href} className="flex items-center justify-center gap-1">
                     {category.cta}
-                    <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform duration-300" />
+                    <ArrowRight className="h-3 w-3" />
                   </a>
                 </Button>
               </div>
@@ -133,7 +133,7 @@ export function ProductCategories() {
             {categories.map((category, index) => (
               <Card
                 key={index}
-                className={`group overflow-hidden border-0 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col transform hover:-translate-y-2 flex-shrink-0 w-[calc(100vw-2rem)] snap-center ${
+                className={`group overflow-hidden border-0 shadow-sm bg-gray-500/10 transition-all duration-500 flex flex-col transform hover:-translate-y-2 flex-shrink-0 w-[calc(100vw-2rem)] snap-center p-0 rounded-none ${
                   isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"
                 }`}
                 style={{
@@ -142,7 +142,7 @@ export function ProductCategories() {
                 }}
               >
                 <div className="aspect-square overflow-hidden relative">
-                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-all duration-500 z-10" />
+                  <div className="absolute inset-0 bg-primary/0 z-10" />
                   <img
                     src={category.image || "/placeholder.svg"}
                     alt={category.title}
@@ -154,23 +154,23 @@ export function ProductCategories() {
                   />
                 </div>
 
-                <div className="p-8 flex flex-col flex-1">
-                  <h3 className="heading-serif text-xl font-medium mb-3 text-balance group-hover:text-primary transition-colors duration-300">
+                <div className="px-8 pt-2 pb-8 flex flex-col flex-1 text-center">
+                  <h3 className="heading-serif text-2xl font-bold mb-3 text-balance">
                     {category.title}
                   </h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed text-sm flex-1 group-hover:text-foreground transition-colors duration-300">
+                  <p className="text-gray-800 mb-6 leading-relaxed text-base flex-1 text-center">
                     {category.description}
                   </p>
 
                   <Button
-                    variant="outline"
+                    variant="ghost"
                     size="default"
-                    className="w-full group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300 bg-transparent mt-auto transform group-hover:scale-105 group-hover:shadow-lg"
+                    className="w-full bg-transparent mt-auto border-0 hover:text-foreground"
                     asChild
                   >
                     <a href={category.href} className="flex items-center justify-center gap-2">
                       {category.cta}
-                      <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-300" />
+                      <ArrowRight className="h-4 w-4" />
                     </a>
                   </Button>
                 </div>

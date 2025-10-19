@@ -142,6 +142,13 @@
     letter-spacing: -0.03em;
     line-height: 1.1;
   }
+  /* Special font for main section titles only */
+  .heading-section {
+    font-family: 'Dela Gothic One', var(--font-instrument);
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+  }
   /* Hide scrollbar for mobile horizontal scroll */
   .scrollbar-hide {
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
