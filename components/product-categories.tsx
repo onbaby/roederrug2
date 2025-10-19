@@ -30,7 +30,7 @@ export function ProductCategories() {
       description: "Your design on a handmade tufted rug, complete customisation over colours, borders, designs.",
       image: "/custom.jpeg",
       cta: "Start Your Rug",
-      href: "/custom-designed",
+      href: "https://forms.gle/FCDnzwFqdadM2X4v5",
     },
     {
       title: "Business Logo Rugs",
@@ -38,7 +38,7 @@ export function ProductCategories() {
         "Level up your brand with a customised tufted rug using your logo, slogan or other image that represents your business.",
       image: "/business.jpeg",
       cta: "Business Rugs",
-      href: "/business-logo",
+      href: "https://forms.gle/FCDnzwFqdadM2X4v5",
     },
     {
       title: "Keyboard Rugs",
@@ -46,21 +46,21 @@ export function ProductCategories() {
         "These rugs serve as unique decor pieces, adding personality to offices, gaming rooms, or tech-inspired spaces.",
       image: "/keyboard.webp",
       cta: "Custom Request",
-      href: "/keyboard-rugs",
+      href: "https://forms.gle/FCDnzwFqdadM2X4v5",
     },
     {
       title: "Custom Sports Logo Rugs",
       description: "Turn your favourite teams logo into a tufted rug, perfect for any man cave or sports lover.",
       image: "/sports.jpg",
       cta: "Start Your Rug",
-      href: "/sports-logo",
+      href: "https://forms.gle/FCDnzwFqdadM2X4v5",
     },
     {
       title: "Custom Car Mats",
       description: "Custom sized and fitted for any car, van or truck.",
       image: "/carrug.jpg",
       cta: "Submit Request",
-      href: "/car-mats",
+      href: "https://forms.gle/FCDnzwFqdadM2X4v5",
     },
   ]
 

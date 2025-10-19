@@ -54,22 +54,18 @@ export function HeroSection() {
             </p>
 
             <div
-              className={`flex flex-col sm:flex-row gap-4 items-center sm:items-start transition-all duration-1000 delay-500 ${
+              className={`flex flex-col sm:flex-row justify-center gap-4 items-center transition-all duration-1000 delay-500 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
               <Button
                 size="sm"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground px-2 py-1 md:px-8 md:py-3 text-xs md:text-base transform hover:scale-105 transition-all duration-300 hover:shadow-lg w-80 md:w-auto"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground px-2 py-1 md:px-16 md:py-3 text-md md:text-base transform hover:scale-105 transition-all duration-300 hover:shadow-lg w-80 md:w-auto"
+                asChild
               >
-                Start Here
-              </Button>
-              <Button
-                size="sm"
-                variant="outline"
-                className="border-white text-white hover:bg-white hover:text-foreground px-2 py-1 md:px-8 md:py-3 text-xs md:text-base bg-transparent transform hover:scale-105 transition-all duration-300 hover:shadow-lg w-80 md:w-auto"
-              >
-                Contact Us
+                <a href="https://forms.gle/FCDnzwFqdadM2X4v5" target="_blank" rel="noopener noreferrer">
+                  Start Here
+                </a>
               </Button>
             </div>
           </div>

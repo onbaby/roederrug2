@@ -46,13 +46,13 @@ export function HowItWorks() {
       icon: Hammer,
       title: "Production",
       description:
-        "Our skilled artisans hand-tuft your rug using premium materials. Each piece is carefully crafted with attention to detail.",
+        "Your rug gets tufted. You'll be regularly updated.",
     },
     {
       icon: Truck,
       title: "Delivery",
       description:
-        "Your finished rug is carefully packaged and shipped worldwide. Track your order and receive your one-of-a-kind piece.",
+        "Once everything is good, we'll ship your rug to you.",
     },
   ]
 
@@ -140,8 +140,11 @@ export function HowItWorks() {
                 <Button
                   size="lg"
                   className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-3 transform hover:scale-105 transition-all duration-300 hover:shadow-lg"
+                  asChild
                 >
-                  Submit Custom Request
+                  <a href="https://forms.gle/FCDnzwFqdadM2X4v5" target="_blank" rel="noopener noreferrer">
+                    Submit Custom Request
+                  </a>
                 </Button>
               </div>
             )}
@@ -206,8 +209,11 @@ export function HowItWorks() {
                   <Button
                     size="sm"
                     className="bg-primary hover:bg-primary/90 text-primary-foreground px-6 py-2"
+                    asChild
                   >
-                    Submit Custom Request
+                    <a href="https://forms.gle/FCDnzwFqdadM2X4v5" target="_blank" rel="noopener noreferrer">
+                      Submit Custom Request
+                    </a>
                   </Button>
                 </div>
               )}

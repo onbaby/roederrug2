@@ -138,8 +138,8 @@ export function Footer() {
                   {[
                     { icon: Truck, text: "Free Worldwide Shipping" },
                     { icon: Shield, text: "Quality Guarantee" },
-                    { icon: RotateCcw, text: "30-Day Returns" },
-                    { icon: CreditCard, text: "Secure Payments" },
+                  
+                  
                   ].map((item, index) => {
                     const IconComponent = item.icon
                     return (

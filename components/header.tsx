@@ -20,19 +20,6 @@ export function Header() {
 
   return (
     <header className="w-full">
-      {/* Feature blurbs bar */}
-      <div className="bg-primary text-primary-foreground py-3 overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="flex items-center justify-center gap-8 text-sm">
-            <span className="animate-pulse">Order your custom rug</span>
-            <span className="hidden md:inline">•</span>
-            <span className="hidden md:inline animate-bounce">Worldwide shipping</span>
-            <span className="hidden md:inline">•</span>
-            <span className="hidden sm:inline">Buy Now Pay Later With Klarna</span>
-          </div>
-        </div>
-      </div>
-
       {/* Main navigation */}
       <div
         className={`bg-background border-b transition-all duration-500 ${
@@ -133,16 +120,22 @@ export function Header() {
           }`}>
               <nav className="flex flex-col space-y-4">
                 {[
-                  { href: "/", label: "Home" },
-                  { href: "/custom", label: "I Need A Custom Rug" },
-                  { href: "/shop", label: "Shop" },
-                  { href: "/designs", label: "Designs" },
-                  { href: "/contact", label: "Contact" },
-                  { href: "/about", label: "About" },
+                  { href: "#product-categories", label: "Our Rugs" },
+                  { href: "#how-it-works", label: "How It Works" },
+                  { href: "#testimonials-about", label: "Customer Gallery" },
+                  { href: "#footer", label: "Contact" },
                 ].map((item, index) => (
                   <a
                     key={item.href}
                     href={item.href}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      setIsMenuOpen(false)
+                      const element = document.querySelector(item.href)
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' })
+                      }
+                    }}
                     className={`text-foreground hover:text-primary transition-all duration-500 ease-in-out hover:translate-x-2 transform ${
                       isMenuOpen 
                         ? 'translate-y-0 opacity-100' 
