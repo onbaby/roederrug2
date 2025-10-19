@@ -39,7 +39,7 @@ export function HeroSection() {
         <div className="relative container mx-auto px-4 h-full flex items-center">
           <div className="max-w-2xl text-white text-center mx-auto">
             <h1
-              className={`heading-display text-4xl md:text-5xl lg:text-6xl text-white mb-6 text-balance transition-all duration-1000 ${
+              className={`heading-section text-4xl md:text-5xl lg:text-6xl text-white mb-6 text-balance transition-all duration-1000 ${
                 isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
               }`}
             >
