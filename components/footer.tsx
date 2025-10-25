@@ -50,8 +50,8 @@ export function Footer() {
                   About Roeder's Rugs
                 </h4>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                  Master craftsperson Maria Roeder brings over 15 years of experience in hand-tufted rug creation. Each
-                  piece is carefully crafted with premium materials and attention to detail.
+                  We bring over the best experience for hand-tufted rug creation. Each
+                  piece is carefully crafted with high quality materials and attention to detail.
                 </p>
                 <div className="flex gap-4">
                   <a
